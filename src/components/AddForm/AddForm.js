@@ -1,5 +1,6 @@
 import React from "react";
 import {useForm} from "react-hook-form"
+import "./AddForm.scss";
 
 const AddForm = (props) =>{
     
@@ -13,11 +14,12 @@ const AddForm = (props) =>{
     }
 
     return(
-        <div>
+        <div >
             <h2>Agregar Socios</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <div>
+            <form onSubmit={handleSubmit(onSubmit)} className="container_addform">
+
+                <div className="container_addform_item">
                     <label>Nombre</label><br/>
                     <input type="text" name="name" 
                         ref={
@@ -28,7 +30,7 @@ const AddForm = (props) =>{
                     </input>
                 </div>
                 
-                <div>
+                <div className="container_addform_item">
                     <label>Apellido</label> <br/>
                     <input type="text" name="surname" 
                         ref={
@@ -39,7 +41,7 @@ const AddForm = (props) =>{
                     </input>
                 </div>             
 
-                <div> 
+                <div className="container_addform_item"> 
                     <label>Edad</label><br/>
                     <input type="number" name="age" 
                         ref={
@@ -51,8 +53,8 @@ const AddForm = (props) =>{
                 </div>
 
 
-                <button>Agregar</button>
-                <button onClick={()=>resetUsers()}>Reset</button>
+                <button className="container_addform_item">Agregar</button>
+                <button className="container_addform_item" onClick={()=>resetUsers()}>Reset</button>
             </form>
         </div>
 

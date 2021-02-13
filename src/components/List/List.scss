@@ -1,0 +1,14 @@
+.container_list {
+  display: grid;
+  justify-content: start;
+  width: 100%;
+
+  &_group_item_tbody_button {
+    margin-left: 5px;
+    background-color: #616268;
+    border: none;
+    color: white;
+    cursor: pointer;
+    min-height: 20px;
+  }
+}

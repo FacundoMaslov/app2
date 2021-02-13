@@ -1,14 +1,15 @@
 import React from "react";
+import "./List.scss"
 
 const List = (props) => {
     const { data, deleteUser } = props;
 
     return (
-        <div>
-            <h2>Socios</h2>
+        <div className="container_list">
+            <h2 className="container_list_group">Socios</h2>
 
-            <table>
-                <thead>
+            <table className="container_list_group">
+                <thead className="container_list_group_item">
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
@@ -16,14 +17,14 @@ const List = (props) => {
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody className="container_list_group_item">
                     {data.length > 0 ?
                         data.map((data) => (
-                            <tr key={data.id}>
+                            <tr key={data.id} className="container_list_group_item_tbody">
                                 <td>{data.name}</td>
                                 <td>{data.surname}</td>
                                 <td>{data.age}</td>
-                                <button onClick={() => deleteUser(data.id)}>Delete</button>
+                                <button className="container_list_group_item_tbody_button" onClick={() => deleteUser(data.id)}>Delete</button>
 
                             </tr>
                         )) :

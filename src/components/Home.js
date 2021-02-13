@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import List from "./List";
-import AddForm from "./AddForm";
+import List from "./List/List";
+import AddForm from "./AddForm/AddForm";
 import {v4 as uuidv4} from "uuid";
-import "./Home.css"
+import "./Home.scss"
 
 const Home =() => {
     const users = []
@@ -28,15 +28,16 @@ const Home =() => {
   
     return (
   
-      <div className="grid-container">
-        <div className="grid-app"> 
+      <div className="container_home">
+
+        <div className="container_home_item"> 
           <h1>Registro de socios</h1>
         </div>
-        <div className="grid-app">
+        <div className="container_home_item">
           <AddForm addUser={addUser} resetUsers={resetUsers}/>
         </div>
   
-        <div className="grid-app">
+        <div className="container_home_item">
           <List data={data} deleteUser={deleteUser} />
         </div>
       </div>
