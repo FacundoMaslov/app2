@@ -1,0 +1,20 @@
+.container_people {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 50px 50px 50px 50px;
+
+  &_item {
+    margin-left: 10px;
+    margin-top: 60px;
+  }
+
+  &_item:nth-child(1) {
+    font-size: 20px;
+    border: solid 1px blue;
+  }
+
+  &_item:nth-child(2) {
+    margin-left: 20px;
+  }
+}
