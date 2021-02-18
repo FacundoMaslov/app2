@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
-import List from "./List/List";
-import AddForm from "./AddForm/AddForm";
 import {v4 as uuidv4} from "uuid";
 import "./Home.scss"
 
+import List from "../List/List";
+import AddForm from "../AddForm/AddForm";
+
+
 const Home =() => {
-    const users = []
-    const [data, setData] = useState(users)
+    const [data, setData] = useState([])
     
     // agregar usuarios
     const addUser = (dat) =>{
@@ -20,7 +21,6 @@ const Home =() => {
     }
   
     //restablecer
-  
     const resetUsers =()=>{
       setData("")
     } 
@@ -33,6 +33,7 @@ const Home =() => {
         <div className="container_home_item"> 
           <h1>Registro de socios</h1>
         </div>
+        
         <div className="container_home_item">
           <AddForm addUser={addUser} resetUsers={resetUsers}/>
         </div>

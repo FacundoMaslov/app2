@@ -1,12 +1,14 @@
-import Navbar from "./components/Navbar";
-import './App.css';
 import { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Home from "./components/Home";
+import './App.css';
+
+import Home from "./components/Home/Home";
 import People from "./components/People/People";
 import Planets from "./components/Planets/Planets";
+import Navbar from "./components/Navbar";
 
-function App() {
+
+const App = () => {
     const [people, setPeople] = useState([]);
     const [planets, setPlanets] = useState([]);
     
@@ -33,15 +35,19 @@ function App() {
          <Navbar/>
          <div className="container">
            <Switch>
+             
             <Route exact path="/">
               <Home/>
             </Route >
+
             <Route exact path="/people">
               <People data={people}/>
             </Route>
+
             <Route exact path="/planets">
               <Planets data={planets}/>
-            </Route>            
+            </Route>  
+
            </Switch>
          </div>
       </Router>
